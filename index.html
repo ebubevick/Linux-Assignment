@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Altschool Linux Command Assignment</h1>
+    <h1> Full Name: Omekwu Victor Ebube</h1>
+    <h1> Student ID: ALT/SOE/023/3149</h1>
+
+<h2>Create User altschool</h2>
+sudo adduser altschool
+
+<h2>Create Sub-Directories in Home Directory</h2>
+mkdir -p /home/altschool/{code,tests,personal,misc}
+
+<h2>Change Directory to Tests (Absolute Path)</h2>
+cd /home/altschool/tests
+
+<h2>Change Directory to Tests (Relative Path)</h2>
+cd tests
+
+<h2>Create fileA with Text Content in Misc Directory</h2>
+echo 'Hello A' > /home/altschool/misc/fileA
+
+
+<h2>Create an Empty fileB in Misc Directory and Populate It</h2>
+touch /home/altschool/misc/fileB echo 'This is the dummy content for fileB' >
+/home/altschool/misc/fileB
+
+<h2>Copy Contents of fileA to fileC in Tests Directory</h2>
+cp /home/altschool/misc/fileA /home/altschool/tests/fileC
+
+
+<h2>Move Contents of fileB into fileD in Tests Directory</h2>
+mv /home/altschool/misc/fileB /home/altschool/tests/fileD
+
+
+<h2>Create a Tar Archive (misc.tar) for the Contents of misc Directory</h2>
+tar -cvf /home/altschool/misc.tar -C /home/altschool misc
+
+
+<h2>Compress the Tar Archive to Create misc.tar.gz</h2>
+gzip /home/altschool/misc.tar
+
+
+<h2>Create a User and Force Password Change Upon Login</h2>
+<p>
+    adduser altschol2
+</p>     
+sudo passwd --expire altschool2
+
+
+<h2>Lock a User's Password</h2>
+sudo passwd -l altschool2
+
+
+<h2>Create a User with No Login Shell</h2>
+sudo useradd -s /sbin/nologin altschool3
+
+
+<h2>Disable Password-Based Authentication for SSH</h2>
+sudo vi /etc/ssh/sshd_config
+<p>
+    PasswordAuthentication no
+</p>
+sudo service ssh restart
+
+<h2>Disable Root Login for SSH</h2>
+sudo vi /etc/ssh/sshd_config
+<p>
+    PermitRootLogin no
+</p>
+sudo service ssh restart
+</body>
+</html>
